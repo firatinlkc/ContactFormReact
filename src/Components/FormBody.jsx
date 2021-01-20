@@ -28,7 +28,7 @@ function FormBody(props){
                       <Button
                           className="d-inline-block m-5"
                           type="submit"
-                          className="btn btn-danger"
+                          variant="danger"
                           onClick={() => props.deletePost(index)}
                       >
                         <i class="fas fa-user-minus"></i>
