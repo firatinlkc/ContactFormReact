@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect} from "react";
 import FormBody from "./FormBody.jsx"
-import { Form, Button, Col, Container, Row } from "react-bootstrap";
+import { Form, Button, Col, Container, Row, Card } from "react-bootstrap";
 
 
 function FormContainer() {
@@ -15,6 +15,7 @@ function FormContainer() {
     useEffect(() => {
       
     }, [datas])
+    
     const [id, setid] = useState(-1)
   
     function handleSubmit(event) {
@@ -73,56 +74,58 @@ function FormContainer() {
           <FormBody datas={datas} deletePost={deletePost} editPost={editPost} />
         </Col>
         <Col sm={6}>
-          <Form className="mt-5 pt-5" onSubmit={id>-1 ? editForm : handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Name</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter name" 
-                ref={nameInput}
-              />
-            </Form.Group>
+          <Card className="">
+            <Form className="m-4" onSubmit={id>-1 ? editForm : handleSubmit}>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Name</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  placeholder="Enter name" 
+                  ref={nameInput}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Surname</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter surname" 
-                ref={surnameInput}
-              />
-            </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Surname</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  placeholder="Enter surname" 
+                  ref={surnameInput}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control 
-                type="email" 
-                placeholder="Enter email" 
-                ref={emailInput}
-              />
-            </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control 
+                  type="email" 
+                  placeholder="Enter email" 
+                  ref={emailInput}
+                />
+              </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Title</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Enter title" 
-                ref={titleInput}  
-              />
-            </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Title</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  placeholder="Enter title" 
+                  ref={titleInput}  
+                />
+              </Form.Group>
 
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Note</Form.Label>
-              <Form.Control 
-                as="textarea" 
-                rows={3} 
-                ref={noteInput}
-              />
-            </Form.Group>
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Note</Form.Label>
+                <Form.Control 
+                  as="textarea" 
+                  rows={3} 
+                  ref={noteInput}
+                />
+              </Form.Group>
 
-            <Button variant={id>-1 ? "success" : "primary"} type="submit">
-              {id>-1 ? "Edit" : "Submit"}
-            </Button>
-          </Form>
+              <Button className="btn-block" variant={id>-1 ? "success" : "primary"} type="submit">
+                {id>-1 ? "Edit" : "Submit"}
+              </Button>
+            </Form>
+          </Card>
         </Col>
       </Row>
     </Container>

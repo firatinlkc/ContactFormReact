@@ -7,7 +7,7 @@ import {FormContainer} from "./Components/"
 
 function App() {
   return (
-    <Container>
+    <Container className="mt-5 pt-4">
       <FormContainer />
     </Container>
   );
