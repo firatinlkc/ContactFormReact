@@ -8,7 +8,7 @@ function FormBody(props) {
       {props.datas.map((data, index) => {
         return (
           <div>
-            <Container>
+            <Container className="mb-4">
               <Accordion defaultActiveKey="0">
                 <Card>
                   <Card.Header>
